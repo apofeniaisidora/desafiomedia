@@ -1,0 +1,28 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+header {
+  background-color: #b39ddb; display: flex; justify-content: space-between; align-items: center;
+}
+.marca {display: flex; align-items: center;}
+nav {
+  background-color: #e6ceff;
+}
+.card {
+  border: solid 1px;
+}
+.imagen {
+  background-image: url(descarga.jpg);
+  background-size: cover;
+  height: 300px;
+  width: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+button {
+  background-color: #836fa9;
+}
+footer {
+  background-color: #b39ddb;
+}
