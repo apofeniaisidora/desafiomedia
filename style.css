@@ -3,17 +3,40 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 header {
-  background-color: #b39ddb; display: flex;
-  color:white; justify-content: space-between; align-items: center;
+  background-color: #b39ddb;
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: header;
 }
-.marca {display: flex; align-items: center; gap: 1em; padding: 0 12px; }
-.menu {padding: 1em;}
+.largo {display:flex;}
+.largo p {padding: 1em;}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0 12px;
+}
+.menu {
+  padding: 1em;
+  grid-area: menu;
+}
 nav {
-  background-color: #e6ceff; text-align: center; padding: 1em;
+  background-color: #e6ceff;
+  text-align: center;
+  padding: 1em;
+  grid-area: nav;
 }
-nav p {margin-top: 0;}
+nav p {
+  margin-top: 0;
+}
+main {
+  grid-area: main;
+}
 .card {
-  border: solid 1px; text-align: center;
+  border: solid 1px #b39ddb;
+  text-align: center;
 }
 .imagen {
   background-image: url(descarga.jpg);
@@ -21,17 +44,78 @@ nav p {margin-top: 0;}
   height: 300px;
   width: 250px;
   background-repeat: no-repeat;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
   display: block;
 }
 button {
-  background-color: #836fa9; color: white; margin-bottom: 1em; border-color: #836fa9;
+  background-color: #836fa9;
+  color: white;
+  margin-bottom: 1em;
+  border-color: #836fa9;
 }
-section {display: flex; justify-content: center;}
-section p {border: 1px #836fa9 solid; padding: 1%;}
+.numeros {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  grid-area: section;
+}
+section p {
+  border: 1px #836fa9 solid;
+  padding: 1%;
+}
 footer {
-  background-color: #b39ddb; text-align: center; height: 5em; color: white;
+  background-color: #b39ddb;
+  text-align: center;
+  height: 5em;
+  color: white;
+  grid-area: footer;
 }
-.iconos {padding: 1em;}
-footer p {margin-top: 0;}
+.iconos {
+  padding: 1em;
+}
+footer p {
+  margin-top: 0;
+}
+
+
+@media (min-width: 100px) and (max-width:769px) {
+  body {display: grid; grid-template-columns: 1fr; grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "section"
+    "footer";}
+  .largo {
+    display: none;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1680px) {
+  body {
+    display: grid;
+    grid-template-rows: 1fr 7fr 1fr 1fr;
+    grid-template-columns: 1fr 10fr;
+    grid-template-areas:
+      "header header header"
+      "nav main main"
+      "nav main main"
+      "nav main main"
+      "nav main main"
+      "section section section"
+      "footer footer footer";
+    grid-template-rows: 1fr 10fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 10fr;
+  }
+  .menu {
+    display: none;
+  }
+  main {display: grid; grid-template-columns: 1fr 1fr;}
+  .numeros {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    grid-area: section;
+  }
+}
