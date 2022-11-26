@@ -54,11 +54,11 @@ button {
   margin-bottom: 1em;
   border-color: #836fa9;
 }
+.paginacion {grid-area: section;}
 .numeros {
   display: flex;
   justify-content: center;
   align-content: center;
-  grid-area: section;
 }
 section p {
   border: 1px #836fa9 solid;
@@ -92,21 +92,18 @@ footer p {
 
 }
 
-@media (min-width: 768px) and (max-width: 1680px) {
+@media (min-width: 768px) and (max-width: 1279px) {
   body {
     display: grid;
-    grid-template-rows: 1fr 7fr 1fr 1fr;
     grid-template-columns: 1fr 10fr;
     grid-template-areas:
-      "header header header"
-      "nav main main"
-      "nav main main"
-      "nav main main"
-      "nav main main"
-      "section section section"
-      "footer footer footer";
-    grid-template-rows: 1fr 10fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 10fr;
+      "header header"
+      "nav main"
+      "nav main"
+      "nav main"
+      "nav main"
+      "section section"
+      "footer footer";
   }
   .menu {
     display: none;
@@ -117,5 +114,29 @@ footer p {
     justify-content: center;
     align-content: center;
     grid-area: section;
+  }
+}
+@media (min-width: 1280px) {
+  
+  main {
+      display: grid; 
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  body {
+    grid-template-columns: 1fr 5fr; 
+    grid-template-areas:
+    "header nav"
+    "header main"
+    "footer main"
+    "footer section"; 
+  } 
+  
+  .menu {
+    display: none;
+  }
+
+  .largo {
+    display: flex;
   }
 }
