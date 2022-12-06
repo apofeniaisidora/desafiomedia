@@ -79,7 +79,7 @@ footer p {
 }
 
 
-@media (min-width: 100px) and (max-width:769px) {
+@media (min-width: 100px) {
   body {display: grid; grid-template-columns: 1fr; grid-template-areas: 
     "header"
     "nav"
@@ -117,7 +117,6 @@ footer p {
   }
 }
 @media (min-width: 1280px) {
-  
   main {
       display: grid; 
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -130,13 +129,16 @@ footer p {
     "header main"
     "footer main"
     "footer section"; 
+    max-width: 100vh;
   } 
   
   .menu {
     display: none;
   }
-
+header {display: flex; flex-direction: column;}
   .largo {
-    display: flex;
+    display: flex; flex-direction: column; padding-top: 1em;
   }
+  .largo p {padding:1px}
+  footer {padding: 50vh 0}
 }
